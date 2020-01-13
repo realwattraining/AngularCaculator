@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Caculator</title>
+</head>
+<style>
+    .monitor1 {
+        background: gray;
+        width: 84%;
+        height: 100px;
+        ;
+        margin-top: 3px;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 5px;
+        display: inline-block;
+    }
+    
+    .monitor {
+        background: gray;
+        width: 84%;
+        margin-top: 3px;
+        border-radius: 5px;
+        margin: auto;
+        margin-top: 5px;
+        display: inline-block;
+    }
+    
+    .button {
+        background: white;
+        height: 200px;
+        width: 100%;
+        margin-top: 3px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        border-radius: 50px;
+    }
+    
+    .value,
+    .result {
+        width: 95%;
+        margin: auto;
+        margin-top: 5px;
+    }
+    
+    .value input,
+    .result span {
+        width: 100%;
+        border-radius: 5px;
+        background-color: none;
+        border: 0px solid white;
+        font-size: 20px;
+        text-align: right;
+    }
+    
+    .result .btn-zoom {
+        float: right;
+    }
+</style>
+
+<body ng-app="myapp" ng-controller="controller">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-5 col-sm-5 mt-5">
+                <div class="monitor1">
+                    <div class="value">
+                        <input type="text" ng-model="valnumber" placeholder="0" disabled>
+                    </div>
+                    <div class="value">
+                        <span class="text-warning" ng-show="error" ng-model="error">{{error}}</span>
+                    </div>
+                    <div class="result">
+                        <span class="re" style="color: white; font-weight: bold;">Result : {{result}}<div class="btn btn-success btn-sm btn-zoom" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-search-plus"></i></div></span>
+                    </div>
+                </div>
+                <div class="monitor">
+                    <div class="row justify-content-center mt-3 ">
+                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase" ng-click="valueButton('c')">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-plus"></i>/<i class="fas fa-minus"></i>
+                        </div>
+                        <div ng-click="valueButton('%')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div ng-click="valueButton('*')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-1 ">
+                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase " ng-click="valueButton('7')">
+                            7
+                        </div>
+                        <div ng-click="valueButton('8')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            8
+                        </div>
+                        <div ng-click="valueButton('9')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            9
+                        </div>
+                        <div ng-click="valueButton('/')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-divide"></i>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-1 ">
+                        <div ng-click="valueButton('4')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            4
+                        </div>
+                        <div ng-click="valueButton('5')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            5
+                        </div>
+                        <div ng-click="valueButton('6')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            6
+                        </div>
+                        <div ng-click="valueButton('+')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-1 ">
+                        <div ng-click="valueButton('1')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            1
+                        </div>
+                        <div ng-click="valueButton('2')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            2
+                        </div>
+                        <div ng-click="valueButton('3')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            3
+                        </div>
+                        <div ng-click="valueButton('-')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                            <i class="fas fa-minus"></i>
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center mt-1 mb-3">
+                        <div ng-click="valueButton('0')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase float-left">
+                            0
+                        </div>
+                        <div ng-click="valueButton('.')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                            .
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <div ng-click="valueButton('=')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                            <i class="fas fa-equals"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zoom-->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info">
+                            <h5 class="modal-title" id="exampleModalLongTitle" style="color : white"> <i class="fas fa-calculator" style="margin-right: 5px;"></i>Result Zoom</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <span style="font-weight: bold;">Result : {{temVal1}} {{symbol}} {{temVal2}} = {{result}}</span><br>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" class="btn btn-danger float-left" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+<script src="index.js "></script>
+
+
+</html>
