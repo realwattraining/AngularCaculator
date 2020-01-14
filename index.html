@@ -82,75 +82,77 @@
                     </div>
                 </div>
                 <div class="monitor">
-                    <div class="row justify-content-center mt-3 ">
-                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase" ng-click="valueButton('c')">
-                            <i class="fas fa-undo"></i>
+                    <div class="container">
+                        <div class="row justify-content-center mt-3 ">
+                            <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase" ng-click="valueButton('c')">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div ng-click="valueButton('sqrt')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <div ng-click="valueButton('%')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div ng-click="valueButton('*')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-times"></i>
+                            </div>
                         </div>
-                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-plus"></i>/<i class="fas fa-minus"></i>
+                        <div class="row justify-content-center mt-1">
+                            <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase " ng-click="valueButton('7')">
+                                7
+                            </div>
+                            <div ng-click="valueButton('8')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                8
+                            </div>
+                            <div ng-click="valueButton('9')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                9
+                            </div>
+                            <div ng-click="valueButton('/')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-divide"></i>
+                            </div>
                         </div>
-                        <div ng-click="valueButton('%')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-percentage"></i>
+                        <div class="row justify-content-center mt-1 ">
+                            <div ng-click="valueButton('4')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                4
+                            </div>
+                            <div ng-click="valueButton('5')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                5
+                            </div>
+                            <div ng-click="valueButton('6')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                6
+                            </div>
+                            <div ng-click="valueButton('+')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </div>
-                        <div ng-click="valueButton('*')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-times"></i>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mt-1 ">
-                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase " ng-click="valueButton('7')">
-                            7
-                        </div>
-                        <div ng-click="valueButton('8')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            8
-                        </div>
-                        <div ng-click="valueButton('9')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            9
-                        </div>
-                        <div ng-click="valueButton('/')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-divide"></i>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mt-1 ">
-                        <div ng-click="valueButton('4')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            4
-                        </div>
-                        <div ng-click="valueButton('5')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            5
-                        </div>
-                        <div ng-click="valueButton('6')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            6
-                        </div>
-                        <div ng-click="valueButton('+')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center mt-1 ">
-                        <div ng-click="valueButton('1')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            1
-                        </div>
-                        <div ng-click="valueButton('2')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            2
-                        </div>
-                        <div ng-click="valueButton('3')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            3
-                        </div>
-                        <div ng-click="valueButton('-')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
-                            <i class="fas fa-minus"></i>
-                        </div>
+                        <div class="row justify-content-center mt-1 ">
+                            <div ng-click="valueButton('1')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                1
+                            </div>
+                            <div ng-click="valueButton('2')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                2
+                            </div>
+                            <div ng-click="valueButton('3')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                3
+                            </div>
+                            <div ng-click="valueButton('-')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase ">
+                                <i class="fas fa-minus"></i>
+                            </div>
 
-                    </div>
-                    <div class="row justify-content-center mt-1 mb-3">
-                        <div ng-click="valueButton('0')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase float-left">
-                            0
                         </div>
-                        <div ng-click="valueButton('.')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
-                            .
-                        </div>
-                        <div class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
-                            <i class="fas fa-keyboard"></i>
-                        </div>
-                        <div ng-click="valueButton('=')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
-                            <i class="fas fa-equals"></i>
+                        <div class="row justify-content-center mt-1 mb-3">
+                            <div ng-click="valueButton('0')" class="col-xl-2 col-md-2 col-sm-2 btn btn-danger mr-3 font-weight-bold text-uppercase float-left">
+                                0
+                            </div>
+                            <div ng-click="valueButton('.')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                                .
+                            </div>
+                            <div class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                                <i class="fas fa-grin-squint-tears"></i>
+                            </div>
+                            <div ng-click="valueButton('=')" class="col-xl-2 col-md-2 col-sm-2 btn btn-warning mr-3 font-weight-bold text-uppercase float-right">
+                                <i class="fas fa-equals"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
